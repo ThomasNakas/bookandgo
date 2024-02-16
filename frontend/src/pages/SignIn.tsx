@@ -48,7 +48,7 @@ const SignIn = () => {
           {...register("email", { required: "This field is required" })}
         ></input>
         {errors.email && (
-          <span className="text-red-500">{errors.email.message}</span>
+          <span className="text-pink-500">{errors.email.message}</span>
         )}
       </label>
       <label className="text-gray-700 text-sm font-bold flex-1">
@@ -65,7 +65,7 @@ const SignIn = () => {
           })}
         ></input>
         {errors.password && (
-          <span className="text-red-500">{errors.password.message}</span>
+          <span className="text-pink-500">{errors.password.message}</span>
         )}
       </label>
       <span className="flex items-center justify-between">
@@ -77,7 +77,7 @@ const SignIn = () => {
         </span>
         <button
           type="submit"
-          className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl"
+          className="bg-pink-500 text-white p-2 font-bold hover:bg-pink-200 text-xl"
         >
           Login
         </button>
