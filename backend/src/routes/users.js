@@ -53,7 +53,7 @@ router.post("/register", [
         }
         user = new user_1.default(req.body);
         yield user.save();
-        const token = jsonwebtoken_1.default.sign({ userId: user.id }, "LearnerFactor", {
+        const token = jsonwebtoken_1.default.sign({ userId: user.id }, process.env.JWT_SECRET_KEY, {
             expiresIn: "1d",
         });
         res.cookie("auth_token", token, {

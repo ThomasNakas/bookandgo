@@ -51,7 +51,7 @@ router.post(
 
       const token = jwt.sign(
         { userId: user.id },
-        "LearnerFactor",
+        process.env.JWT_SECRET_KEY as string,
         {
           expiresIn: "1d",
         }

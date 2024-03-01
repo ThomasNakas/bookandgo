@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.FONTEND_URL,
+    origin: process.env.FRONTEND_URL as string,
     credentials: true,
   })
 );
@@ -39,8 +39,9 @@ app.use("/api/hotels", hotelRoutes);
 app.use("/api/my-bookings", bookingRoutes);
 
 // app.get("*", (req: Request, res: Response) => {
-//   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+//   res.sendFile(path.join(__dirname, "../../frontend/dist"));
 // });
+app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 app.listen(7000, () => {
   console.log("server running on localhost:7000");

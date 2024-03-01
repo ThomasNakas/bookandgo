@@ -1,2 +1,6 @@
 testrepo
 testrepo/*
+dist
+.vscode
+.env
+node_modules
